@@ -1,0 +1,15 @@
+<div class="list-container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a class="btn btn-primary" routerLink="/addTask">Add Task</a>
+      <div class="row">
+        <div class="col-md-6">
+          <app-list [pending] = "true"></app-list>
+        </div>
+        <div class="col-md-6">
+          <app-list [pending] = "false"></app-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

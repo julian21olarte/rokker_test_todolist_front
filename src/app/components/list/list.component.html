@@ -1,0 +1,23 @@
+<h3 *ngIf="pending">Pending Tasks</h3>
+<h3 *ngIf="!pending">Overdue Tasks</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><button class="btn btn-default" (click)="sortTasks('name')">Name</button></th>
+      <th><button class="btn btn-default" (click)="sortTasks('dueDate')">dueDate</button></th>
+      <th class="text-center"><button class="btn btn-default" (click)="sortTasks('priority')">Priority</button></th>
+      <th class="text-center">Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks" [ngClass]="{'color_red': !pending}">
+      <td>{{task.name}}</td>
+      <td>{{task.dueDate | date}}</td>
+      <td class="text-center">{{task.priority}}</td>
+      <td class="text-center">
+        <button class="btn btn-info btn-xs" (click)="editTask(task)">Edit</button>
+        <button class="btn btn-danger btn-xs" (click)="deleteTask(task._id)" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
