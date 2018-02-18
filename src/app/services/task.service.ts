@@ -6,8 +6,8 @@ export class TaskService {
 
     private url: string;
     private currentTask: any;
-    constructor(private http: Http) { 
-        this.url = "https://rokker-test-todolist.herokuapp.com/task";
+    constructor(private http: Http) {
+        this.url = 'https://rokker-test-todolist.herokuapp.com/task';
         this.currentTask = null;
     }
 
@@ -16,11 +16,11 @@ export class TaskService {
     }
 
     public addTask(task) {
-        var data = {
+        const data = {
             name: task.name,
             dueDate: task.dueDate,
             priority: task.priority
-        }
+        };
         console.log(data);
         return this.http.post(this.url + '/create', data);
     }

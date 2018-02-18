@@ -1,3 +1,7 @@
 .color_red {
     color: red;
 }
+
+.btn.btn-default {
+    border: none;
+}

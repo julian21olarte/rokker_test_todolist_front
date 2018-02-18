@@ -1,11 +1,27 @@
-<h3 *ngIf="pending">Pending Tasks</h3>
-<h3 *ngIf="!pending">Overdue Tasks</h3>
+<h3>{{title}}</h3>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><button class="btn btn-default" (click)="sortTasks('name')">Name</button></th>
-      <th><button class="btn btn-default" (click)="sortTasks('dueDate')">dueDate</button></th>
-      <th class="text-center"><button class="btn btn-default" (click)="sortTasks('priority')">Priority</button></th>
+      <th>
+        <button class="btn btn-default name" (click)="sortTasks('name')">Name
+          <span *ngIf="!sortToggle['name'].order && sortToggle['name'].active" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          <span *ngIf="sortToggle['name'].order && sortToggle['name'].active" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </button>
+      </th>
+
+      <th>
+        <button class="btn btn-default dueDate" (click)="sortTasks('dueDate')">dueDate
+          <span *ngIf="!sortToggle['dueDate'].order && sortToggle['dueDate'].active" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          <span *ngIf="sortToggle['dueDate'].order && sortToggle['dueDate'].active" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </button>
+      </th>
+
+      <th class="text-center">
+        <button class="btn btn-default priority" (click)="sortTasks('priority')">Priority
+          <span *ngIf="!sortToggle['priority'].order && sortToggle['priority'].active" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+          <span *ngIf="sortToggle['priority'].order && sortToggle['priority'].active" class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        </button>
+      </th>
       <th class="text-center">Controls</th>
     </tr>
   </thead>
