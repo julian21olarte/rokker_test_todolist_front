@@ -57,8 +57,7 @@ export class ListComponent implements OnInit {
     this.tasks = this.tasks.sort( (task1, task2) => {
       if ( task1[data] > task2[data] === this.sortToggle[data].order) {
         return 1;
-      }
-      if ( task1[data] < task2[data] === this.sortToggle[data].order) {
+      } else if ( task1[data] < task2[data] === this.sortToggle[data].order) {
         return -1;
       }
       return 0;
