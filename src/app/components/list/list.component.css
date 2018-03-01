@@ -9,3 +9,22 @@
 h3 {
     margin-top: 50px;
 }
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+table th {
+    width: 25%;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    td button {
+        width: 80%;
+        margin: 5px auto;
+    }
+}
