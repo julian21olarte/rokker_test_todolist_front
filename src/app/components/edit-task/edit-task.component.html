@@ -1,7 +1,7 @@
 <div class="panel-container">
   <div class="panel panel-default">
       <h3>Edit Task</h3>
-    <div class="panel-body">
+    <div class="panel-body" *ngIf="task">
       <div class="form-group row">
         <label for="name" class="col-2 col-form-label">Name</label>
         <div class="col-10">
@@ -26,7 +26,7 @@
           </select>
         </div>
       </div>
-      <button type="button" class="btn btn-success" (click) ="editTask()">Edit Task</button>
+      <button type="button" class="btn btn-success pull-right" (click) ="editTask()">Edit Task</button>
     </div>
   </div>
 </div>

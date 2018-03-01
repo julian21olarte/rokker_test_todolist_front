@@ -19,17 +19,22 @@ export class AddTaskComponent implements OnInit {
   }
 
   public addTask() {
-    var task = {
+    const task = {
       name: this.name,
       dueDate: this.dueDate,
       priority: this.priority,
+    };
+    if (!this.taskService.validateTask(task)) {
+      alert('Please complete all fields!');
+      return false;
     }
     console.log(task);
     this.taskService.addTask(task)
     .subscribe(taskStored => {
-      alert("task added successfully!");
+      alert('task added successfully!');
       this.router.navigate(['home']);
     });
   }
+
 
 }

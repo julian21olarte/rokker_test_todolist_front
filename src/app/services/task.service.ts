@@ -30,7 +30,7 @@ export class TaskService {
     }
 
     public editTask(task) {
-        return this.http.post(this.url + '/update', {task, taskId: task._id});
+        return this.http.post(this.url + '/update', { task, taskId: task._id });
     }
 
     public getCurrentTask() {
@@ -40,5 +40,9 @@ export class TaskService {
     public setCurrentTask(task: any) {
         console.log(task);
         this.currentTask = task;
+    }
+
+    public validateTask(task: any) {
+        return task && !Object.values(task).some(val => val == null || val === undefined || val === '');
     }
 }

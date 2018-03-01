@@ -18,7 +18,7 @@
         <label for="priority" class="col-2 col-form-label">priority</label>
         <div class="col-10">
           <select name="priority" id="priority" [(ngModel)] = "priority">
-            <option value="1" selected>1</option>
+            <option value="1" selected="selected">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
@@ -26,7 +26,7 @@
           </select>
         </div>
       </div>
-      <button type="button" class="btn btn-success" (click) ="addTask()">Add Task</button>
+      <button type="button" class="btn btn-success pull-right" (click) ="addTask()">Add Task</button>
     </div>
   </div>
 </div>

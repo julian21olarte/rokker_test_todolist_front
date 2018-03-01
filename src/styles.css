@@ -2,3 +2,30 @@
 body {
   background-color: darkslateblue;
 }
+
+.panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.panel-container .panel.panel-default {
+  width: 60%;
+  box-shadow: 4px 4px 20px -4px rgba(0,0,0,0.75);
+  border: 1px solid gray;
+  padding: 15px;
+}
+
+/*
+*Media Queries
+*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .panel-container .panel.panel-default {
+      width: 100%;
+    }
+  }

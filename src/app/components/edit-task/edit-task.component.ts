@@ -15,6 +15,10 @@ export class EditTaskComponent implements OnInit {
 
   ngOnInit() {
     this.task = this.taskService.getCurrentTask();
+    if (!this.taskService.validateTask(this.task)) {
+      this.router.navigate(['home']);
+      return;
+    }
     const date = new Date(this.task.dueDate);
     const year = date.getFullYear();
     const month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
